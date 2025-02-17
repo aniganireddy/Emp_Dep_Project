@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="demo-project-for-department-service" />
         <module name="demo-project-for-employment-service" />
         <module name="service-registry" />
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
       <module name="demo-for-APIGateway" options="-parameters" />
       <module name="demo-project-for-department-service" options="-parameters" />
       <module name="demo-project-for-employment-service" options="-parameters" />
