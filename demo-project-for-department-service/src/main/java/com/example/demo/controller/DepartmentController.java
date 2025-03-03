@@ -25,6 +25,7 @@ public class DepartmentController {
 
     @Autowired
     private DepartmentServiceImpl departmentService;
+
     @Operation(
             summary = "CRUD REST API",
             description = "This api used to save the record in database"
@@ -37,6 +38,8 @@ public class DepartmentController {
     @PostMapping("/create")
     public ResponseEntity<DepartmentDto> createNewDepartmentRecord(@RequestBody DepartmentDto departmentDto){
        DepartmentDto dto =departmentService.createDepartment(departmentDto);
+       //send email to customer email
+       // departmentService.sendEmail(departmentDto.getEmail());
        return new ResponseEntity<>(dto, HttpStatus.CREATED);
     }
 

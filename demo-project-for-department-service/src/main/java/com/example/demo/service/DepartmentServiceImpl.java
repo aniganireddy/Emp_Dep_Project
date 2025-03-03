@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -21,6 +23,9 @@ public class DepartmentServiceImpl implements DepartmentService{
     private ModelMapper modelMapper;
     @Autowired
     private DepartmentRepository departmentRepository;
+
+    @Autowired
+    private JavaMailSender mailSender;
     @Override
     public DepartmentDto createDepartment(DepartmentDto departmentDto) {
         //converting Mongo Dto to Mongo entity
@@ -72,4 +77,15 @@ public class DepartmentServiceImpl implements DepartmentService{
         return null;
 
     }
+
+
+
+
+//    public void sendEmail(String toEmail) {
+//        SimpleMailMessage message = new SimpleMailMessage();
+//        message.setTo(toEmail);
+//        message.setSubject("Account Created Successfully");
+//        message.setText("Hi Boss, \n\nYour account has been created successfully!");
+//        mailSender.send(message);
+//    }
 }

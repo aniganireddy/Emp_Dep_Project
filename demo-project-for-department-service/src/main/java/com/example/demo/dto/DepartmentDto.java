@@ -16,4 +16,5 @@ public class DepartmentDto {
     private String departmentCode;
     private String departmentDescription;
     private String departmentName;
+    private String email;
 }
